@@ -6,3 +6,4 @@
     git remote add origin https://github.com/your-account/your-repository.git
 4. Push the local repo to your web repo
     git push origin master
+https://semlinker.com/ng-http-client/#%E5%AF%BC%E5%85%A5-HttpClientModule-%E6%A8%A1%E5%9D%97

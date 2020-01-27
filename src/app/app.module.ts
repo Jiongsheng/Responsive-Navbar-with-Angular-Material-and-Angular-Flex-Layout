@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ADAMaterialModule } from './material-module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { MainSectionComponent } from './main-section/main-section.component';
@@ -16,18 +17,25 @@ import { OrganisationComponent } from './administration/organisation/organisatio
 import { OrganisationSearchComponent } from './administration/organisation-search/organisation-search.component';
 import { OrganisationTableComponent } from './administration/organisation-table/organisation-table.component';
 import { OrganisationEntryComponent } from './administration/organisation-entry/organisation-entry.component';
+import { HttpClientComponent } from './util/http-client/http-client.component';
+
+import {HttpInterceptorService} from './services/http-interceptor.service';
 
 @NgModule({
-  declarations: [AppComponent, MainSectionComponent, SideNavComponent, TopNavComponent, ChangePasswordComponent,ChangePasswordComponentDialog, OrganisationComponent, OrganisationSearchComponent, OrganisationTableComponent, OrganisationEntryComponent],
+  declarations: [AppComponent, MainSectionComponent, SideNavComponent, TopNavComponent, ChangePasswordComponent,ChangePasswordComponentDialog, OrganisationComponent, OrganisationSearchComponent, OrganisationTableComponent, OrganisationEntryComponent, HttpClientComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ADAMaterialModule,
     FlexLayoutModule,
     FormsModule
   ],
   entryComponents: [ChangePasswordComponent,ChangePasswordComponentDialog],
-  providers: [SideNavService],
+  providers: [
+    SideNavService,
+    {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
