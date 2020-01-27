@@ -1,0 +1,73 @@
+<mat-grid-list cols="5" rowHeight="100px">
+    <mat-grid-tile
+      [colspan]="3"
+      [rowspan]="1"
+      [style.background]="lightblue">
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Client Id" value="1234">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile
+        [colspan]="3"
+        [rowspan]="1"
+        [style.background]="lightblue">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Organisation Name" value="The Testers Pty Ltd">
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="1"
+      [style.background]="lightgreen">
+      <button mat-raised-button color="accent">MRS Lookup</button>
+    </mat-grid-tile>
+</mat-grid-list>
+<hr>
+<mat-grid-list cols="6" rowHeight="100px">
+      <mat-grid-tile
+          [colspan]="3"
+          [rowspan]="1"
+          [style.background]="lightblue">
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Contract Expirty" value="31/12/2021">
+          </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1"
+        [style.background]="lightgreen">
+        <button mat-raised-button color="accent">Suspend</button>
+      </mat-grid-tile>
+      <mat-grid-tile
+      [colspan]="3"
+      [rowspan]="1"
+      [style.background]="lightblue">
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Insurance Expiry" value="31/12/2021">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="3"
+      [rowspan]="1"
+      [style.background]="lightblue">
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Contract RM Reference" value="56789">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="3"
+      [rowspan]="1"
+      [style.background]="lightblue">
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Reason Code" value="ABC - Behaviour">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile
+    [colspan]="3"
+    [rowspan]="1"
+    [style.background]="lightblue">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" value="thetester@google.com">
+    </mat-form-field>
+    </mat-grid-tile>
+</mat-grid-list>

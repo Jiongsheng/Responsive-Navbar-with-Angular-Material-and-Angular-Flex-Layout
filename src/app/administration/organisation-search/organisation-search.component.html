@@ -1,0 +1,22 @@
+<mat-grid-list cols="5" rowHeight="100px">
+  <mat-grid-tile
+      [colspan]="3"
+      [rowspan]="1"
+      [style.background]="lightblue">
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Organisation Search" value="Sushi">
+      </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="1"
+    [style.background]="lightgreen">
+    <button mat-raised-button color="accent">Search</button>
+  </mat-grid-tile>
+  <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="1"
+    [style.background]="lightpink">
+    <button mat-raised-button color="accent">New Organisation</button>
+  </mat-grid-tile>
+</mat-grid-list>

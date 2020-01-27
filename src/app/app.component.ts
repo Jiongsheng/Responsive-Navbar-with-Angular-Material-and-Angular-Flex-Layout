@@ -1,10 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Directive, Input, ViewChild  } from '@angular/core';
+import { SideNavService } from './services/side-nav.service';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  implements OnInit{
   title = 'app';
+
+  @ViewChild('sidenav') public sidenav: MatSidenav;
+
+  constructor(private sideNavService:SideNavService) { 
+  }
+
+  ngOnInit() {
+    this.sideNavService.missionAnnounced$.subscribe(
+      obj => {console.log('rrr'); this.sidenavToggle();}
+    );
+  }
+
+  sidenavToggle(){
+    console.log("ttt");
+    this.sidenav.toggle();
+  }
+
 }
