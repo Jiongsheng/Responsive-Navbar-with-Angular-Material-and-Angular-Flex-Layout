@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders,HttpEvent,HttpEventType } from "@angular/common/http";
 
 import { Observable, of,forkJoin} from "rxjs";
-import { tap } from "rxjs/operators";
+import { tap, debounce, debounceTime, distinctUntilChanged } from "rxjs/operators";
 import { catchError } from "rxjs/operators";
 import { switchMap } from 'rxjs/operators';
+import { ReactiveFormsModule, FormControl, FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-http-client',
@@ -20,6 +21,19 @@ export class HttpClientComponent implements OnInit {
     //this.test1();
     this.test2();
   }
+  /*
+  private searchField: FormControl;
+  private results: Observable<Todo[]>;
+  test():void{
+    this.results = this.searchField.valueChanges.pipe(
+      debounceTime(400),
+      distinctUntilChanged(),
+      tap(_ =>(console.log('loading...'))),
+      switchMap(term => this.itunes.search(term)),
+      tap(_=>(console.log('loaded')))
+    );
+  }
+  */
 
   test1():void{
     this.todos$ = this.http
